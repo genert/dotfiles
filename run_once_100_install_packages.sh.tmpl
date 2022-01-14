@@ -2,9 +2,17 @@
 #!/bin/bash
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
-brew "git"
 cask "google-chrome"
+cask "docker"
+cask "visual-studio-code"
+
+brew "git"
 brew "tmux"
+brew "docker"
+brew "duti"
+brew "gpg2"
+brew "macvim"
+brew "git-lfs"
 
 EOF
 {{ end -}}

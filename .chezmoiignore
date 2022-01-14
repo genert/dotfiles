@@ -1,0 +1,8 @@
+README.md
+LICENSE
+install.sh
+tmux*.log
+
+{{ if ne .chezmoi.os "darwin" }}
+.duti
+{{ end }}

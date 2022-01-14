@@ -1,0 +1,13 @@
+#!/bin/bash -e
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+touch ~/.bash_profile
+grep -i "source ~/.bashrc" ~/.bash_profile || (echo "source ~/.bashrc" >> ~/.bash_profile && source ~/.bash_profile)
+brew --version || (/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)")
+wget --version || brew install wget
+xcode-select --install || echo "XCode CLI tools already installed"
+((brew info cmake | grep -i "not installed") && brew install cmake) || echo "cmake already installed"
+which jq || brew install jq
+
+{{ end -}}
