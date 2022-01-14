@@ -1,0 +1,31 @@
+# -*-mode:curlrc-*- vim:ft=dosini
+
+# ~/.curlrc
+# =============================================================================
+# Configures startup options for cURL.
+#
+# See https://ec.haxx.se/cmdline/cmdline-configfile
+
+# Define the user agent identification header.
+user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0"
+
+# When following a redirect, automatically set the previous URL as referer.
+referer = ";auto"
+
+## Add timestamps.
+write-out "%{http_code} ns:%{time_namelookup} conn:%{time_connect} appconn:%{time_appconnect} prexfr:%{time_pretransfer} rdr:%{time_redirect} ttfb:%{time_starttransfer} TOTAL:%{time_total}\n"
+
+# Wait 60 seconds before timing out.
+connect-timeout = 60
+
+# Follow `Location:` headers and 3XX response codes.
+location
+
+# Use the server-provided timestamp, if any.
+remote-time
+
+# Retry the transfer if a transient error occurs.
+retry = 5
+
+# Consider connections refused as transient errors.
+retry-connrefused

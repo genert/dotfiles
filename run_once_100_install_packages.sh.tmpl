@@ -2,10 +2,17 @@
 #!/bin/bash
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/services"
+
 cask "google-chrome"
 cask "docker"
 cask "visual-studio-code"
 
+brew "asdf"                                 # Extendable version manager
+brew "wget"                                 # Web content downloader
 brew "git"
 brew "tmux"
 brew "docker"
