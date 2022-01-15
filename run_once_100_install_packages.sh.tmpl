@@ -5,6 +5,7 @@ brew bundle -v --no-lock --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "homebrew/cask-fonts"
 
 cask "google-chrome"
 cask "docker"
@@ -12,6 +13,7 @@ cask "visual-studio-code"
 cask "tresorit"
 cask "qbittorrent"
 cask "iina"
+cask "font-hack-nerd-font"
 
 brew "asdf"                                 # Extendable version manager
 brew "wget"                                 # Web content downloader
@@ -26,6 +28,7 @@ brew "git-lfs"
 brew "gpg2"
 brew "zlib"                                 # Lossless data-compression library
 brew "neofetch"                             # System information tool
+cask "zoom"                                 # Meetings application
 
 EOF
 {{ end -}}
