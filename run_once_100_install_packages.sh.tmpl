@@ -18,13 +18,14 @@ cask "font-hack-nerd-font"
 cask "zoom"                                 # Meetings application
 cask "notion"                               # Documentation 
 cask "obsidian"                             # Knowledge graph
-cask "virtualbox"                           # VM
 cask "wireshark"                            # Network analysis
-cask "mindnode-pro"                         # Mindmap
 cask "flux"                                 # Blue screen scam (?)
-cask "things"                               # GTD
 cask "figma"                                # Design
 cask "adobe-creative-cloud"                 # Adobe
+cask "meetingbar"                           # Calendar aggregation tool
+{{- if (eq .chezmoi.arch "amd64") -}}
+cask "virtualbox"                           # VM
+{{ end -}}
 
 brew "asdf"                                 # Extendable version manager
 brew "wget"                                 # Web content downloader
@@ -42,7 +43,6 @@ brew "git-lfs"
 brew "gpg2"
 brew "zlib"                                 # Lossless data-compression library
 brew "neofetch"                             # System information tool
-brew "meetingbar"                           # Calendar aggregation tool
 
 EOF
 {{ end -}}
