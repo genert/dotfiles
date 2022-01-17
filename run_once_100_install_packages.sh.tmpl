@@ -23,10 +23,12 @@ cask "flux"                                 # Blue screen scam (?)
 cask "figma"                                # Design
 cask "adobe-creative-cloud"                 # Adobe
 cask "meetingbar"                           # Calendar aggregation tool
+cask "microsoft-office"                     # Excel
 {{- if (eq .chezmoi.arch "amd64") -}}
 cask "virtualbox"                           # VM
 {{ end -}}
 
+brew "asdf"                                 # Runtime versions manager
 brew "coreutils"                            # GNU Core utilities
 brew "wget"                                 # Web content downloader
 brew "screenfetch"                          # Screenshot information tool
