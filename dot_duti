@@ -1,5 +1,19 @@
 # bundle id | UTI/ext/MIME type | role
 
+## Binary
+com.ridiculousfish.HexFiend obj editor
+com.ridiculousfish.HexFiend bin editor
+com.ridiculousfish.HexFiend aria2 editor
+com.ridiculousfish.HexFiend dat editor
+com.ridiculousfish.HexFiend obj editor
+com.ridiculousfish.HexFiend o editor
+com.ridiculousfish.HexFiend rsrc editor
+com.ridiculousfish.HexFiend pyc editor
+com.ridiculousfish.HexFiend blob editor
+com.ridiculousfish.HexFiend exe editor
+com.ridiculousfish.HexFiend hex editor
+
+## Programming
 com.microsoft.VSCode .applescript all
 com.microsoft.VSCode .c all
 com.microsoft.VSCode .clj all
@@ -24,3 +38,38 @@ com.microsoft.VSCode .sh all
 com.microsoft.VSCode .sql all
 com.microsoft.VSCode .ts all
 com.microsoft.VSCode .txt all
+
+## Video
+com.colliderli.iina public.movie    editor
+com.colliderli.iina mov    editor
+com.colliderli.iina mkv    editor
+com.colliderli.iina mpeg    editor
+com.colliderli.iina mp4    editor
+com.colliderli.iina m4v    editor
+com.colliderli.iina avi    editor
+com.colliderli.iina divx    editor
+com.colliderli.iina wmv    editor
+com.colliderli.iina 3gp    editor
+com.colliderli.iina 3g2    editor
+com.colliderli.iina h264    editor
+com.colliderli.iina h265    editor
+com.colliderli.iina av1    editor
+com.colliderli.iina vp8    editor
+com.colliderli.iina vp9    editor
+com.colliderli.iina webm    editor
+com.colliderli.iina flv    editor
+
+## Audio
+com.colliderli.iina mp3    editor
+com.colliderli.iina m4a    editor
+com.colliderli.iina m4b    editor
+com.colliderli.iina m4r    editor
+com.colliderli.iina aac    editor
+com.colliderli.iina caf    editor
+com.colliderli.iina wav    editor
+com.colliderli.iina flac    editor
+com.colliderli.iina alac    editor
+com.colliderli.iina aiff    editor
+com.colliderli.iina opus    editor
+com.colliderli.iina ogg    editor
+com.colliderli.iina oga    editor
