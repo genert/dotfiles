@@ -34,5 +34,6 @@
 sourceDir: "{{ .chezmoi.sourceDir }}"
 
 data:
-  name: "{{ $name }}"
-  email: "{{ $email }}"
+  name: {{ $name | quote }}
+  email: {{ $email | quote }}
+  sshPrivateKey1PasswordUUID: {{ $sshPrivateKey1PasswordUUID | quote }}
