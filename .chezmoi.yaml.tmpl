@@ -21,7 +21,7 @@
 
 {{- /* Does the same for the SSH Key */ -}}
 {{- $sshPrivateKey1PasswordUUID := "1Password UUID of the SSH private key" -}}
-{{- if sshPrivateKey1PasswordUUID . "sshPrivateKey1PasswordUUID" -}}
+{{- if hasKey . "sshPrivateKey1PasswordUUID" -}}
 {{-   $sshPrivateKey1PasswordUUID = .sshPrivateKey1PasswordUUID -}}
 {{- else if $interactive -}}
 {{-   $sshPrivateKey1PasswordUUID = promptString "sshPrivateKey1PasswordUUID" $sshPrivateKey1PasswordUUID -}}
