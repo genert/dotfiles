@@ -20,11 +20,11 @@
 {{- end -}}
 
 {{- /* Does the same for the SSH Key */ -}}
-{{- $sshPrivateKey1PasswordUUID := "1Password UUID of the SSH private key" -}}
-{{- if hasKey . "sshPrivateKey1PasswordUUID" -}}
-{{-   $sshPrivateKey1PasswordUUID = .sshPrivateKey1PasswordUUID -}}
+{{- $sshkey := "mock-uuid" -}}
+{{- if hasKey . "sshkey" -}}
+{{-   $sshkey = .sshkey -}}
 {{- else if $interactive -}}
-{{-   $sshPrivateKey1PasswordUUID = promptString "sshPrivateKey1PasswordUUID" $sshPrivateKey1PasswordUUID -}}
+{{-   $sshkey = promptString "sshkey UUID" $sshkey -}}
 {{- end -}}
 
 {{- if $interactive -}}
@@ -36,4 +36,4 @@ sourceDir: "{{ .chezmoi.sourceDir }}"
 data:
   name: {{ $name | quote }}
   email: {{ $email | quote }}
-  sshprivatekeyuuid: {{ $sshPrivateKey1PasswordUUID | quote }}
+  sshprivatekeyuuid: {{ $sshkey | quote }}
