@@ -1,6 +1,7 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 #!/bin/bash
 
+# Use brew to install dependencies
 brew bundle -v --no-lock --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
 tap "homebrew/core"
@@ -27,6 +28,7 @@ cask "adobe-creative-cloud"                 # Adobe
 cask "meetingbar"                           # Calendar aggregation tool
 cask "microsoft-office"                     # Excel
 cask "slack"                                # Slack
+cask "iterm2"                               # Native terminal alternative
 {{- if (eq .chezmoi.arch "amd64") -}}
 cask "virtualbox"                           # VM
 {{ end -}}
@@ -51,6 +53,13 @@ brew "neofetch"                             # System information tool
 brew "wireguard-tools"                      # Wireguard
 brew "jq"                                   # Sed for JSON
 brew "openssl"                              # OpenSSL
+brew "mas"                                  # App Store CLI
+brew "vlc"                                  # Old-school media viewer
 
 EOF
+
+# Install App Store Apps
+mas install 937984704 # Amphetamine
+mas install 441258766 # Magnet
+
 {{ end -}}
