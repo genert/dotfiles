@@ -29,6 +29,7 @@ cask "meetingbar"                           # Calendar aggregation tool
 cask "microsoft-office"                     # Excel
 cask "slack"                                # Slack
 cask "iterm2"                               # Native terminal alternative
+cask "vlc"                                  # Old-school media viewer
 {{- if (eq .chezmoi.arch "amd64") -}}
 cask "virtualbox"                           # VM
 {{ end -}}
@@ -54,7 +55,6 @@ brew "wireguard-tools"                      # Wireguard
 brew "jq"                                   # Sed for JSON
 brew "openssl"                              # OpenSSL
 brew "mas"                                  # App Store CLI
-brew "vlc"                                  # Old-school media viewer
 
 EOF
 
