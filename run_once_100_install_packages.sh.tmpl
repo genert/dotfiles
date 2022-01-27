@@ -7,6 +7,7 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
+tap "caskroom/cask"
 
 cask "google-chrome"                        # Google
 cask "firefox"                              # Fox
@@ -31,6 +32,7 @@ cask "slack"                                # Slack
 cask "iterm2"                               # Native terminal alternative
 cask "vlc"                                  # Old-school media viewer
 cask "aerial"                               # Screen saver
+cask "google-cloud-sdk"                     # Google cloud SDK
 {{- if (eq .chezmoi.arch "amd64") -}}
 cask "virtualbox"                           # VM
 {{ end -}}
@@ -56,6 +58,7 @@ brew "wireguard-tools"                      # Wireguard
 brew "jq"                                   # Sed for JSON
 brew "openssl"                              # OpenSSL
 brew "mas"                                  # App Store CLI
+brew "nvm"                                  # Node version manager
 
 EOF
 
