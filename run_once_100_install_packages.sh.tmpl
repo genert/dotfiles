@@ -8,6 +8,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
 tap "caskroom/cask"
+tap "goreleaser/tap/goreleaser"
 
 cask "google-chrome"                        # Google
 cask "firefox"                              # Fox
@@ -62,10 +63,13 @@ brew "nvm"                                  # Node version manager
 brew "go"                                   # Golang
 brew "qemu"                                 # Hypervisor
 brew "podman"                               # Docker alternative
+brew "goreleaser"                           # Go releaser
 EOF
 
 # Install App Store Apps
 mas install 937984704 # Amphetamine
 mas install 441258766 # Magnet
+mas install 904280696 # Things
+mas install 497799835 # XCode
 
 {{ end -}}
