@@ -21,6 +21,7 @@
 [commit]
     # Specify template file for new commit messages.
     template = ~/.git-commit-template.txt
+    gpgsign = true
 
 [fetch]
     # Remove any remote-tracking references that no longer exist on the remote.
@@ -36,3 +37,7 @@
 
 [init]
     defaultBranch = master
+
+# Projects related
+[url "ssh://git@bitbucket.seventhsenses.com:7999/"]
+	insteadOf = https://bitbucket.seventhsenses.com/scm/

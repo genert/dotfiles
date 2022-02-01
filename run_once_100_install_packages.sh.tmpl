@@ -7,7 +7,6 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
-tap "caskroom/cask"
 tap "goreleaser/tap/goreleaser"
 
 cask "google-chrome"                        # Google
@@ -34,6 +33,9 @@ cask "iterm2"                               # Native terminal alternative
 cask "vlc"                                  # Old-school media viewer
 cask "aerial"                               # Screen saver
 cask "google-cloud-sdk"                     # Google cloud SDK
+cask "flutter"                              # Flutter
+cask "anaconda"                             # Python nvm & deps
+cask "gpg-suite-no-mail"                    # GPG
 {{- if (eq .chezmoi.arch "amd64") -}}
 cask "virtualbox"                           # VM
 {{ end -}}
