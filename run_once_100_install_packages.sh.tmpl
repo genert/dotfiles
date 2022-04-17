@@ -32,7 +32,6 @@ cask "iterm2"                               # Native terminal alternative
 cask "vlc"                                  # Old-school media viewer
 cask "aerial"                               # Screen saver
 cask "google-cloud-sdk"                     # Google cloud SDK
-cask "flutter"                              # Flutter
 cask "anaconda"                             # Python nvm & deps
 cask "gpg-suite-no-mail"                    # GPG
 {{- if (eq .chezmoi.arch "amd64") -}}
@@ -65,17 +64,28 @@ brew "nvm"                                  # Node version manager
 brew "go"                                   # Golang
 brew "mockery"                              # Golang mocks generation
 brew "qemu"                                 # Hypervisor
-brew "podman"                               # Docker alternative
 brew "goreleaser"                           # Go releaser
 brew "protobuf"                             # Protobuf
 brew "rustup"                               # Rust
 brew "erlang"                               # Erlang
 brew "minikube"                             # Local k8s
 brew "llvm"                                 # Compilers
+
+# Infrastructure
+brew "packer"                               # VM build
 brew "istioctl"                             # Istio
 brew "weaveworks/tap/eksctl"                # k8s for EKS
 brew "terraform"                            # Terraform
+brew "podman"                               # Docker alternative
 
+# App development
+cask "android-studio"                       # Android Studio
+cask "flutter"                              # Flutter
+brew "android-sdk"                          # Android SDK
+brew "android-ndk"                          # Android Native SDK
+brew "ant"
+brew "maven"
+brew "gradle"
 EOF
 
 # Install App Store Apps
