@@ -34,6 +34,7 @@ cask "aerial"                               # Screen saver
 cask "google-cloud-sdk"                     # Google cloud SDK
 cask "anaconda"                             # Python nvm & deps
 cask "gpg-suite-no-mail"                    # GPG
+cask "discord"                              # Chat
 {{- if (eq .chezmoi.arch "amd64") -}}
 cask "virtualbox"                           # VM
 {{ end -}}
@@ -86,6 +87,14 @@ brew "android-ndk"                          # Android Native SDK
 brew "ant"
 brew "maven"
 brew "gradle"
+
+# ML
+brew "vips"
+brew "pkgconfig"
+brew "cmake"
+brew "ffmpeg"
+brew "opencv"
+
 EOF
 
 # Install App Store Apps
