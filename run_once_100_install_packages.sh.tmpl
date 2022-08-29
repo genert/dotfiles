@@ -35,12 +35,12 @@ cask "google-cloud-sdk"                     # Google cloud SDK
 cask "anaconda"                             # Python nvm & deps
 cask "gpg-suite-no-mail"                    # GPG
 cask "discord"                              # Chat
+cask "1password/tap/1password-cli"          # 1Password CLI
 {{- if (eq .chezmoi.arch "amd64") -}}
 cask "virtualbox"                           # VM
 {{ end -}}
 
 brew "spotify"                              # Spotify
-brew "asdf"                                 # Runtime versions manager
 brew "coreutils"                            # GNU Core utilities
 brew "wget"                                 # Web content downloader
 brew "screenfetch"                          # Screenshot information tool

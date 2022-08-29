@@ -19,13 +19,6 @@
 {{-   $email = promptString "email" $email -}}
 {{- end -}}
 
-{{- /* Does the same for the SSH Key */ -}}
-{{- $sshkey := "mock-uuid" -}}
-{{- if hasKey . "sshkey" -}}
-{{-   $sshkey = .sshkey -}}
-{{- else if $interactive -}}
-{{-   $sshkey = promptString "sshkey UUID" $sshkey -}}
-{{- end -}}
 
 {{- if $interactive -}}
 {{-   writeToStdout "💡 Tip: you can re-enter name, email, and 1Password UUIDs with `chezmoi init --data=false`.\n" -}}
@@ -36,4 +29,3 @@ sourceDir: "{{ .chezmoi.sourceDir }}"
 data:
   name: {{ $name | quote }}
   email: {{ $email | quote }}
-  sshprivatekeyuuid: {{ $sshkey | quote }}
