@@ -14,7 +14,6 @@ cask "brave-browser"                        # Brave
 cask "docker"
 cask "visual-studio-code"
 cask "tresorit"
-cask "qbittorrent"
 cask "iina"
 cask "hex-fiend"                            # Hex editor
 cask "font-hack-nerd-font"
@@ -35,6 +34,8 @@ cask "google-cloud-sdk"                     # Google cloud SDK
 cask "anaconda"                             # Python nvm & deps
 cask "gpg-suite-no-mail"                    # GPG
 cask "discord"                              # Chat
+cask "pycharm"                              # PyCharm
+cask "temurin"                              # Java
 cask "1password/tap/1password-cli"          # 1Password CLI
 {{- if (eq .chezmoi.arch "amd64") -}}
 cask "virtualbox"                           # VM
@@ -71,6 +72,7 @@ brew "rustup"                               # Rust
 brew "erlang"                               # Erlang
 brew "minikube"                             # Local k8s
 brew "llvm"                                 # Compilers
+brew "boost"                                # C++ boost
 
 # Infrastructure
 brew "packer"                               # VM build
@@ -82,8 +84,7 @@ brew "podman"                               # Docker alternative
 # App development
 cask "android-studio"                       # Android Studio
 cask "flutter"                              # Flutter
-brew "android-sdk"                          # Android SDK
-brew "android-ndk"                          # Android Native SDK
+cask "android-commandlinetools"             # CLI tooling
 brew "ant"
 brew "maven"
 brew "gradle"
