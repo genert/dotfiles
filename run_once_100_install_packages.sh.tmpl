@@ -35,7 +35,6 @@ cask "anaconda"                             # Python nvm & deps
 cask "gpg-suite-no-mail"                    # GPG
 cask "discord"                              # Chat
 cask "pycharm"                              # PyCharm
-cask "temurin"                              # Java
 cask "1password/tap/1password-cli"          # 1Password CLI
 {{- if (eq .chezmoi.arch "amd64") -}}
 cask "virtualbox"                           # VM
@@ -71,8 +70,28 @@ brew "protobuf"                             # Protobuf
 brew "rustup"                               # Rust
 brew "erlang"                               # Erlang
 brew "minikube"                             # Local k8s
-brew "llvm"                                 # Compilers
+brew "arangodb"                             # NoSQL db
+brew "postgresql"                           # Postgres
+brew "redpanda"                             # Kafka alternative
+
+# Java
+brew "jenv"                                 # Java version manager
+cask "temurin"                              # Java
+cask "AdoptOpenJDK/openjdk/adoptopenjdk8"   # Java 8
+brew "maven"
+brew "gradle"
+
+# C++/C
+brew "bazel"                                # Build tool
+brew "gcc"                                  # Compiler
+brew "pkgconfig"                            # Library management
+brew "cmake"                                # Build tooling
+brew "llvm"                                 # Compiler
+brew "clang"                                # Compiler
 brew "boost"                                # C++ boost
+brew "spdlog"                               # Logger
+brew "abseil"                               # Google internal library
+brew "googletest"                           # Google test library
 
 # Infrastructure
 brew "packer"                               # VM build
@@ -86,13 +105,9 @@ cask "android-studio"                       # Android Studio
 cask "flutter"                              # Flutter
 cask "android-commandlinetools"             # CLI tooling
 brew "ant"
-brew "maven"
-brew "gradle"
 
 # ML
 brew "vips"
-brew "pkgconfig"
-brew "cmake"
 brew "ffmpeg"
 brew "opencv"
 
