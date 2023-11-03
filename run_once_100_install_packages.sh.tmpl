@@ -8,17 +8,11 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
 
-cask "google-chrome"                        # Google
-cask "firefox"                              # Fox
-cask "brave-browser"                        # Brave
-cask "docker"
+# Tools
 cask "visual-studio-code"
 cask "tresorit"
 cask "iina"
-cask "hex-fiend"                            # Hex editor
 cask "font-hack-nerd-font"
-cask "zoom"                                 # Meetings application
-cask "notion"                               # Documentation 
 cask "obsidian"                             # Knowledge graph
 cask "wireshark"                            # Network analysis
 cask "flux"                                 # Blue screen scam (?)
@@ -26,19 +20,9 @@ cask "figma"                                # Design
 cask "adobe-creative-cloud"                 # Adobe
 cask "meetingbar"                           # Calendar aggregation tool
 cask "microsoft-office"                     # Excel
-cask "slack"                                # Slack
-cask "iterm2"                               # Native terminal alternative
-cask "vlc"                                  # Old-school media viewer
-cask "aerial"                               # Screen saver
 cask "google-cloud-sdk"                     # Google cloud SDK
-cask "anaconda"                             # Python nvm & deps
-cask "gpg-suite-no-mail"                    # GPG
 cask "discord"                              # Chat
-cask "pycharm"                              # PyCharm
 cask "1password/tap/1password-cli"          # 1Password CLI
-{{- if (eq .chezmoi.arch "amd64") -}}
-cask "virtualbox"                           # VM
-{{ end -}}
 
 brew "spotify"                              # Spotify
 brew "coreutils"                            # GNU Core utilities
@@ -46,15 +30,9 @@ brew "wget"                                 # Web content downloader
 brew "screenfetch"                          # Screenshot information tool
 brew "htop"                                 # Interactive system-monitor
 brew "telnet"                               # Networking
-brew "git"
-brew "git-extras"                           # Some extras
-brew "gitup"                                # When it is time to merge
 brew "tmux"                                 # Terminal mux
 brew "docker"
 brew "duti"
-brew "macvim"
-brew "git-lfs"
-brew "gpg2"
 brew "zlib"                                 # Lossless data-compression library
 brew "neofetch"                             # System information tool
 brew "wireguard-tools"                      # Wireguard
@@ -64,21 +42,16 @@ brew "mas"                                  # App Store CLI
 brew "nvm"                                  # Node version manager
 brew "go"                                   # Golang
 brew "mockery"                              # Golang mocks generation
-brew "qemu"                                 # Hypervisor
-brew "goreleaser"                           # Go releaser
 brew "protobuf"                             # Protobuf
 brew "rustup"                               # Rust
 brew "erlang"                               # Erlang
-brew "minikube"                             # Local k8s
-brew "arangodb"                             # NoSQL db
-brew "postgresql"                           # Postgres
-brew "redpanda"                             # Kafka alternative
-brew "meilisearch"                          # Indexer for not large documents
+
+# Terminal
+brew "exa"
+brew "autojump"
 
 # Java
 brew "jenv"                                 # Java version manager
-cask "temurin"                              # Java
-cask "AdoptOpenJDK/openjdk/adoptopenjdk8"   # Java 8
 brew "maven"
 brew "gradle"
 
@@ -107,14 +80,6 @@ cask "flutter"                              # Flutter
 cask "android-commandlinetools"             # CLI tooling
 brew "ant"
 
-# ML
-brew "vips"
-brew "ffmpeg"
-brew "opencv"
-
-# Hardware
-cask "ghdl"
-
 EOF
 
 # Install App Store Apps
@@ -127,4 +92,8 @@ mas install 1055511498  # Day One
 
 # Upgrade App Store Apps
 mas upgrade
+
+# Terminal
+nvm install node
+npm install -g tldr
 {{ end -}}
