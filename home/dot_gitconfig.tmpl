@@ -20,22 +20,24 @@
 	command = compare $2 $1 png:- | montage -geometry +4+4 $2 - $1 png:- | display -title \"$1\" -
 
 [commit]
-    # Specify template file for new commit messages.
-    template = ~/.git-commit-template.txt
-    gpgsign = true
+  # Specify template file for new commit messages.
+  template = ~/.git-commit-template.txt
+  gpgsign = true
 
 [fetch]
-    # Remove any remote-tracking references that no longer exist on the remote.
-    prune = true
+  # Remove any remote-tracking references that no longer exist on the remote.
+  prune = true
 
 [apply]
-    # Detect whitespace errors when applying a patch.
-    whitespace = fix
+  # Detect whitespace errors when applying a patch.
+  whitespace = fix
 
 [merge]
-    # Include summaries of merged commits in newly created merge commit messages.
-    log = true
+  # Include summaries of merged commits in newly created merge commit messages.
+  log = true
 
 [init]
-    defaultBranch = master
+  defaultBranch = master
 
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/

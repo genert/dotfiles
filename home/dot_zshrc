@@ -16,6 +16,7 @@ export GOPATH=~/go
 export PATH="$PATH:$GOPATH/bin"
 export GOPRIVATE=github.com/sensusq/*
 export PATH="/usr/local/bin:$PATH"
+export SSH_AUTH_SOCK="~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 # Google cloud SDK
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
