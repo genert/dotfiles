@@ -13,6 +13,11 @@ wanted_extensions=(
   "golang.Go"
   "BazelBuild.vscode-bazel"
   "tamasfe.even-better-toml"
+  "ms-python.python"
+  "dbaeumer.vscode-eslint"
+  "Dart-Code.dart-code"
+  "bradlc.vscode-tailwindcss"
+  "mikestead.dotenv"
 )
 
 function is_vscode_extension_installed() {
@@ -23,12 +28,12 @@ function is_vscode_extension_installed() {
 }
 
 for extension in "${wanted_extensions[@]}"; do
-    if ! is_vscode_extension_installed "${extension}"; then
-        if [[ -n "${FOR_WINDOWS:-}" ]]; then
-        log_task "Installing VS Code extension on Windows: ${extension}"
-        else
-        log_task "Installing VS Code extension: ${extension}"
-        fi
-        c code --install-extension "${extension}"
+  if ! is_vscode_extension_installed "${extension}"; then
+    if [[ -n "${FOR_WINDOWS:-}" ]]; then
+      log_task "Installing VS Code extension on Windows: ${extension}"
+    else
+      log_task "Installing VS Code extension: ${extension}"
     fi
+    c code --install-extension "${extension}"
+  fi
 done
