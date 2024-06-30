@@ -1,4 +1,3 @@
-# Dotfiles
+# Installation guide
 
-> ./install.sh
-
+- Install

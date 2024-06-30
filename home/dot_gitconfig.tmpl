@@ -1,6 +1,7 @@
 [user]
-    name = {{ .name | quote }}
-    email = {{ .email | quote }}
+  name = {{ .name | quote }}
+  email = {{ .email | quote }}
+  signingkey = {{ .signingkey | quote }}
 
 [pull]
 	rebase = true
@@ -38,5 +39,3 @@
 [init]
     defaultBranch = master
 
-[url "ssh://git@github.com/"]
-        insteadOf = https://github.com/

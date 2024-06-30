@@ -1,0 +1,60 @@
+#!/bin/bash -e
+
+set -eufo pipefail
+
+# {{ template "scripts-library" }}
+
+# The following line is for ShellCheck to correctly identify the above include
+true || source ../.chezmoitemplates/scripts-library
+
+{{- if (eq .chezmoi.os "darwin") -}}
+
+# Configure dock
+trap 'killall Dock' EXIT
+
+declare -a remove_labels=(
+	Launchpad
+	Safari
+	Messages
+	Mail
+	Maps
+	Photos
+	FaceTime
+	Calendar
+	Contacts
+	Reminders
+	Notes
+	Freeform
+	TV
+	Music
+	Keynote
+	Numbers
+	Pages
+	"App Store"
+);
+
+declare -a apps=(
+  '/System/Applications/Music.app'
+  '/Applications/WezTerm.app'
+  '/Applications/Safari.app'
+  '/Applications/Visual Studio Code.app'
+  '/Applications/Tresorit.app'
+  '/Applications/Things3.app'
+  '/Applications/Obsidian.app'
+  '~/Downloads'
+);
+
+for label in "${remove_labels[@]}"; do
+	dockutil --no-restart --remove "${label}" || true
+done
+
+for app in "${apps[@]}"; do
+  dockutil --no-restart --add "$app" || true
+done
+
+trap 'killall Dock' EXIT
+
+# Disable notification center
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+
+{{ end -}}

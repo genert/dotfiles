@@ -1,7 +1,7 @@
 README.md
 LICENSE
+home
 install.sh
-tmux*.log
 
 {{ if ne .chezmoi.os "darwin" }}
 .duti

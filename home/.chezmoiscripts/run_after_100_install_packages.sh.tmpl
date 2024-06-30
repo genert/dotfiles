@@ -1,12 +1,11 @@
-{{- if (eq .chezmoi.os "darwin") -}}
-#!/bin/bash
+#!/bin/bash -e
 
+{{- if (eq .chezmoi.os "darwin") -}}
 # Use brew to install dependencies
 brew bundle -v --no-lock --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
-tap "homebrew/core"
 tap "homebrew/services"
-tap "homebrew/cask-fonts"
+tap "arl/arl"
 
 # Tools
 cask "visual-studio-code"
@@ -22,17 +21,20 @@ cask "meetingbar"                           # Calendar aggregation tool
 cask "microsoft-office"                     # Excel
 cask "google-cloud-sdk"                     # Google cloud SDK
 cask "discord"                              # Chat
+cask "1password"                            # 1Password
 cask "1password/tap/1password-cli"          # 1Password CLI
 cask "qbittorrent"                          # Magic tool
 cask "mullvadvpn"                           # VPN
+cask "wezterm"                              # Wezterm
 
-brew "spotify"                              # Spotify
+brew "dockutil"                             # Tool for managing dock
 brew "coreutils"                            # GNU Core utilities
 brew "wget"                                 # Web content downloader
 brew "screenfetch"                          # Screenshot information tool
 brew "htop"                                 # Interactive system-monitor
 brew "telnet"                               # Networking
 brew "tmux"                                 # Terminal mux
+brew "gitmux"                               # Git mux
 brew "docker"
 brew "duti"
 brew "zlib"                                 # Lossless data-compression library
@@ -47,10 +49,8 @@ brew "mockery"                              # Golang mocks generation
 brew "protobuf"                             # Protobuf
 brew "rustup"                               # Rust
 brew "erlang"                               # Erlang
-
-# Terminal
-brew "exa"
-brew "autojump"
+brew "gpg"                                  # GPG
+brew "pinentry-mac"                         # GPG
 
 # Java
 brew "jenv"                                 # Java version manager
@@ -58,12 +58,11 @@ brew "maven"
 brew "gradle"
 
 # C++/C
-brew "bazel"                                # Build tool
+brew "bazelisk"                             # Build tool
 brew "gcc"                                  # Compiler
 brew "pkgconfig"                            # Library management
 brew "cmake"                                # Build tooling
 brew "llvm"                                 # Compiler
-brew "clang"                                # Compiler
 brew "boost"                                # C++ boost
 brew "spdlog"                               # Logger
 brew "abseil"                               # Google internal library
@@ -83,19 +82,4 @@ cask "android-commandlinetools"             # CLI tooling
 brew "ant"
 
 EOF
-
-# Install App Store Apps
-mas install 937984704   # Amphetamine
-mas install 441258766   # Magnet
-mas install 904280696   # Things
-mas install 497799835   # XCode
-mas install 1370791134  # DigiDocgit 
-mas install 1055511498  # Day One
-
-# Upgrade App Store Apps
-mas upgrade
-
-# Terminal
-nvm install node
-npm install -g tldr
 {{ end -}}

@@ -1,0 +1,34 @@
+#!/bin/bash -e
+
+# {{ template "scripts-library" }}
+
+# The following line is for ShellCheck to correctly identify the above include
+true || source ../.chezmoitemplates/scripts-library
+
+wanted_extensions=(
+  "redhat.vscode-yaml"
+  "ms-vscode-remote.vscode-remote-extensionpack"
+  "eamodio.gitlens"
+  "EditorConfig.EditorConfig"
+  "golang.Go"
+  "BazelBuild.vscode-bazel"
+  "tamasfe.even-better-toml"
+)
+
+function is_vscode_extension_installed() {
+  local extension="$1"
+
+  # shellcheck disable=SC2312
+  code --list-extensions 2>/dev/null | grep "${extension}" >/dev/null
+}
+
+for extension in "${wanted_extensions[@]}"; do
+    if ! is_vscode_extension_installed "${extension}"; then
+        if [[ -n "${FOR_WINDOWS:-}" ]]; then
+        log_task "Installing VS Code extension on Windows: ${extension}"
+        else
+        log_task "Installing VS Code extension: ${extension}"
+        fi
+        c code --install-extension "${extension}"
+    fi
+done

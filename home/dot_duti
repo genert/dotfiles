@@ -38,6 +38,7 @@ com.microsoft.VSCode .sh all
 com.microsoft.VSCode .sql all
 com.microsoft.VSCode .ts all
 com.microsoft.VSCode .txt all
+com.microsoft.VSCode .go all
 
 ## Video
 com.colliderli.iina public.movie    editor
