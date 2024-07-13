@@ -34,6 +34,6 @@ for extension in "${wanted_extensions[@]}"; do
     else
       log_task "Installing VS Code extension: ${extension}"
     fi
-    c code --install-extension "${extension}"
+    c code --install-extension "${extension}" --force
   fi
 done
