@@ -1,3 +1,4 @@
 # Installation guide
 
-- Install
+- Install chezmoi
+- ./install.sh

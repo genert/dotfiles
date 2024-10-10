@@ -1,6 +1,6 @@
 {{- $name := "Genert Org" -}}
 {{- $email := "git@genert.org" -}}
-{{- $signingkey := "F9C445E8E3532100" -}}
+{{- $signingkey := "8AA0D5A1FD5CD816" -}}
 
 {{- $chezmoiForce := or (has "--force" .chezmoi.args) (has "--force=true" .chezmoi.args) -}}
 {{- $interactive := and stdinIsATTY (not $chezmoiForce) -}}

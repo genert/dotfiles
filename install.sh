@@ -53,4 +53,4 @@ fi
 
 log_task "Running 'chezmoi $*'"
 # replace current process with chezmoi
-exec "${chezmoi}" "$@"
+exec chezmoi "$@"
