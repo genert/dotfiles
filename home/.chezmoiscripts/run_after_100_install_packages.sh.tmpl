@@ -2,7 +2,7 @@
 
 {{- if (eq .chezmoi.os "darwin") -}}
 # Use brew to install dependencies
-brew bundle -v --no-lock --file=/dev/stdin <<EOF
+brew bundle -v --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "arl/arl"
